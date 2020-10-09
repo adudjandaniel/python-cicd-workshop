@@ -93,7 +93,7 @@ config.json
 .idea
 
 #Security/Credentials Ignores
-cicd_demo_gcp_creds.json
+terraform-tut-cred.json
 
 #Terraform Ignore file
 *.dll
