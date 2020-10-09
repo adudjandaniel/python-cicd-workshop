@@ -47,7 +47,7 @@ resource "google_compute_firewall" "http-5000" {
 resource "google_compute_instance" "default" {
   name = "default"
   machine_type = "g1-small"
-  zone = "us-east1-b"
+  zone = "us-central1-c"
   tags =[
       "name","default"
   ]
