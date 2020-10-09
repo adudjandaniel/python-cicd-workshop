@@ -1,6 +1,6 @@
 variable "project_name" {
   type = string
-  default = "cicd-workshops"
+  default = "terraform-tut-290820"
 }
 
 variable "port_number" {
@@ -11,7 +11,7 @@ variable "port_number" {
 variable "docker_declaration" {
   type = string
   # Change the image: string to match the docker image you want to use
-  default = "spec:\n  containers:\n    - name: test-docker\n      image: 'ariv3ra/python-cicd-workshop'\n      stdin: false\n      tty: false\n  restartPolicy: Always\n"
+  default = "spec:\n  containers:\n    - name: test-docker\n      image: 'adddanny/python-cicd-workshop'\n      stdin: false\n      tty: false\n  restartPolicy: Always\n"
 }
 
 variable "boot_image_name" {
@@ -25,9 +25,9 @@ data "google_compute_network" "default" {
 
 # Specify the provider (GCP, AWS, Azure)
 provider "google"{
-  credentials = file("cicd_demo_gcp_creds.json")
+  credentials = file("terraform-tut-cred.json")
   project = var.project_name
-  region = "us-east1-b"
+  region = "us-central1"
 }
 
 resource "google_compute_firewall" "http-5000" {
