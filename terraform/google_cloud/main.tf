@@ -1,11 +1,11 @@
 variable "project_name" {
   type = string
-  default = "terraform-tut-290820"
+  default = "addserver"
 }
 
 variable "port_number" {
   type = string
-  default = "5000"
+  default = "80"
 }
 
 variable "docker_declaration" {
@@ -30,8 +30,8 @@ provider "google"{
   region = "us-central1"
 }
 
-resource "google_compute_firewall" "http-5000" {
-  name    = "http-5000"
+resource "google_compute_firewall" "http-80" {
+  name    = "http-80"
   network = data.google_compute_network.default.name
 
   allow {
